@@ -20,9 +20,10 @@ sudo apt-get update
 
 # Install the latest OSS release:
 sudo apt-get install grafana
+
 # To start Grafana Server
-sudo /bin/systemctl status grafana-server
-sudo systemctl start grafana-server
+sudo /bin/systemctl status grafana-server /n
+sudo systemctl start grafana-server/n
 sudo systemctl enable grafana-server
 
 
