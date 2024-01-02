@@ -32,6 +32,6 @@
 6. operation - aggregate -sum/count and EXECUTE. 
 7. to see the docker dashboard - goto prometheus dashboard - search docker - copy the ID.
 8. got to prometheus- dashbaord - add new - paste the ID and select the prometheus server and hit enter. thts all now you will see the docker metrics in dashboard.
-for detail - check my hashnode blog -
+for detail - check my hashnode blog -https://krishkp.hashnode.dev/monitoring-in-prometheus-and-grafana-docker-dashboard-cadvisor
 
 
