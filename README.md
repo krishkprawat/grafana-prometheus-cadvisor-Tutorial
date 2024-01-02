@@ -32,12 +32,8 @@ cAdvisor (short for container Advisor) analyzes and exposes resource usage and p
 
 wget https://raw.githubusercontent.com/prometheus/prometheus/main/documentation/examples/prometheus.yml
 
-# Install Prometheus using Docker
-
-docker run -d --name=prometheus -p 9090:9090 -v <PATH_TO_prometheus.yml_FILE>:/etc/prometheus/prometheus.yml prom/prometheus --config.file=/etc/prometheus/prometheus.yml
-
-
-# Add cAdvisor target
+**after this, a prometheus.yml file will be added in the directory. this is prometheus config file where we have to add the other scrap configurations.**
+like # Add cAdvisor target
 
 ```
 scrape_configs:
@@ -46,11 +42,17 @@ scrape_configs:
   static_configs:
   - targets:
     - cadvisor:8080
+```
+
+# Install Prometheus using Docker
+
+docker run -d --name=prometheus -p 9090:9090 -v <PATH_TO_prometheus.yml_FILE>:/etc/prometheus/prometheus.yml prom/prometheus --config.file=/etc/prometheus/prometheus.yml
+
 
 
 # Using Docker Compose
 
-
+```
 version: '3.2'
 services:
   prometheus:
