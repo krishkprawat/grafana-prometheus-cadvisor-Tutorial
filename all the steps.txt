@@ -12,3 +12,25 @@
     - targets:
       - <container_name>:<port>
 9. restart the docker container and see the prometheus gui now, automatically a target <<docker>> will be added tehre.
+10. goto graph and hit the promQL - rate(container_cpu_usage_seconds_total{name="redis"}[1m])
+
+# see the metrics of other docker container
+
+1. run the docker container directly in terminal
+2. docker run -d -p 8000:8000 --name todo-app krishpauri/node-todo-cicd:latest
+3. docker ps - docker container should run now.
+4. go to cadvisor gui and this new todo-app should show there also.
+5. goto prometheus, and hit the promQL - rate(container_cpu_usage_seconds_total{name="todo-app"}[1m])
+6
+
+# see the dashboard in grafana
+ 1. install grafan via doc. - see readmme file.
+2. open grafana - add data source => add prometheus => add name and server url (localhost:9090)
+3. explore view > enter queries-> metric- container network recive bytes
+4. label - name
+5. selecyty value - select your container name
+6. operation - aggregate -sum/count and EXECUTE. 
+7. to see the docker dashboard - goto prometheus dashboard - search docker - copy the ID.
+8. got to prometheus- dashbaord - add new
+
+
